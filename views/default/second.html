@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<LINK REL=StyleSheet HREF="{{=URL('static','css/style.css')}}" TYPE="text/css" MEDIA=screen> 
+		<meta charset="utf-8">
+		<title>JUEGO PROFESORES</title>
+
+		<script src="{{=URL('static','js/jquery_1.11.0.js')}}" language="JavaScript1.2"></script>
+		<script src="{{=URL('static','js/estudiante.js')}}" language="JavaScript1.2"></script>
+		<script src="{{=URL('static','js/profesor.js')}}" language="JavaScript1.2"></script>
+		<script src="{{=URL('static','js/scriptjg.js')}}" language="JavaScript1.2"></script>
+	</head>
+	<header>
+		<a class="title">
+		JUEGO DOCENTES UNIVERSIDAD DISTRITAL
+		</a>
+	</header>
+	<body>
+
+
+		<section>
+			<canvas id="myCanvas" width="800" height = "600">
+			</canvas>
+			<div>
+				<div class="personajes">
+					<h3>THEY'RE GOOD TEACHERS. FIND THEM!</h3>
+					<img id="profesorBS1DOWN" src="{{=URL('static','Sprites/ProfesorBueno/Style1/abajo.png')}}"/>
+					<img id="profesorBS2DOWN" src="{{=URL('static','Sprites/ProfesorBueno/Style2/abajo.png')}}"/>
+				</div>
+				<div class="personajes">
+					<h3>THEY'RE BAD TEACHERS. BEWARE OF THEM!</h3>
+					<img id="profesorMS1DOWN" src="{{=URL('static','Sprites/ProfesorMalo/Style1/abajo.png')}}"/>
+					<img id="profesorMS2DOWN" src="{{=URL('static','Sprites/ProfesorMalo/Style2/abajo.png')}}"/>
+					<h3>YOUR TASK IS TO GET 100 POINTS BEFORE DYING</h3>
+				</div>
+			</div>
+			
+		</section>
+		<button id="iniciar">Iniciar</button>
+		<!--Imagenes-->
+		<!--ESTUDIANTE-->
+		<!--IZQUIERDA-->
+		<img class ="oculta" id="estudianteLEFT1" src="{{=URL('static','Sprites/Estudiante/Izquierda/1.png')}}"/>
+		<img class ="oculta" id="estudianteLEFT2" src="{{=URL('static','Sprites/Estudiante/Izquierda/2.png')}}"/>
+		<img class ="oculta" id="estudianteLEFT3" src="{{=URL('static','Sprites/Estudiante/Izquierda/3.png')}}"/>
+		<img class ="oculta" id="estudianteLEFT4" src="{{=URL('static','Sprites/Estudiante/Izquierda/4.png')}}"/>
+		<img class ="oculta" id="estudianteLEFT5" src="{{=URL('static','Sprites/Estudiante/Izquierda/5.png')}}"/>
+		<img class ="oculta" id="estudianteLEFT6" src="{{=URL('static','Sprites/Estudiante/Izquierda/6.png')}}"/>
+		<img class ="oculta" id="estudianteLEFT7" src="{{=URL('static','Sprites/Estudiante/Izquierda/7.png')}}"/>
+		<!--DERECHA-->
+		<img class ="oculta" id="estudianteRIGHT1" src="{{=URL('static','Sprites/Estudiante/Derecha/1.png')}}"/>
+		<img class ="oculta" id="estudianteRIGHT2" src="{{=URL('static','Sprites/Estudiante/Derecha/2.png')}}"/>
+		<img class ="oculta" id="estudianteRIGHT3" src="{{=URL('static','Sprites/Estudiante/Derecha/3.png')}}"/>
+		<img class ="oculta" id="estudianteRIGHT4" src="{{=URL('static','Sprites/Estudiante/Derecha/4.png')}}"/>
+		<img class ="oculta" id="estudianteRIGHT5" src="{{=URL('static','Sprites/Estudiante/Derecha/5.png')}}"/>
+		<img class ="oculta" id="estudianteRIGHT6" src="{{=URL('static','Sprites/Estudiante/Derecha/6.png')}}"/>
+		<img class ="oculta" id="estudianteRIGHT7" src="{{=URL('static','Sprites/Estudiante/Derecha/7.png')}}"/>
+		<!--ARRIBA-->
+		<img class ="oculta" id="estudianteUP1" src="{{=URL('static','Sprites/Estudiante/Arriba/1.png')}}"/>
+		<img class ="oculta" id="estudianteUP2" src="{{=URL('static','Sprites/Estudiante/Arriba/2.png')}}"/>
+		<img class ="oculta" id="estudianteUP3" src="{{=URL('static','Sprites/Estudiante/Arriba/3.png')}}"/>
+		<img class ="oculta" id="estudianteUP4" src="{{=URL('static','Sprites/Estudiante/Arriba/4.png')}}"/>
+		<img class ="oculta" id="estudianteUP6" src="{{=URL('static','Sprites/Estudiante/Arriba/6.png')}}"/>
+		<img class ="oculta" id="estudianteUP7" src="{{=URL('static','Sprites/Estudiante/Arriba/7.png')}}"/>
+		<!--ABAJO-->
+		<img class ="oculta" id="estudianteDOWN1" src="{{=URL('static','Sprites/Estudiante/Abajo/1.png')}}"/>
+		<img class ="oculta" id="estudianteDOWN2" src="{{=URL('static','Sprites/Estudiante/Abajo/2.png')}}"/>
+		<img class ="oculta" id="estudianteDOWN3" src="{{=URL('static','Sprites/Estudiante/Abajo/3.png')}}"/>
+		<img class ="oculta" id="estudianteDOWN4" src="{{=URL('static','Sprites/Estudiante/Abajo/4.png')}}"/>
+		<img class ="oculta" id="estudianteDOWN5" src="{{=URL('static','Sprites/Estudiante/Abajo/5.png')}}"/>
+		<img class ="oculta" id="estudianteDOWN6" src="{{=URL('static','Sprites/Estudiante/Abajo/6.png')}}"/>
+		<!--PROFESORES-->
+		<!--Profesor bueno-->
+		<!--Style 1-->
+		<img class ="oculta" id="profesorBS1UP" src="{{=URL('static','Sprites/ProfesorBueno/Style1/arriba.png')}}"/>
+		<img class ="oculta" id="profesorBS1LEFT" src="{{=URL('static','Sprites/ProfesorBueno/Style1/izquierda.png')}}"/>
+		<img class ="oculta" id="profesorBS1RIGHT" src="{{=URL('static','Sprites/ProfesorBueno/Style1/derecha.png')}}"/>
+		<!--Style 2-->
+		<img class ="oculta" id="profesorBS2UP" src="{{=URL('static','Sprites/ProfesorBueno/Style2/arriba.png')}}"/>
+		<img class ="oculta" id="profesorBS2LEFT" src="{{=URL('static','Sprites/ProfesorBueno/Style2/izquierda.png')}}"/>
+		<img class ="oculta" id="profesorBS2RIGHT" src="{{=URL('static','Sprites/ProfesorBueno/Style2/derecha.png')}}"/>
+		<!--Profesor malo-->
+		<!--Style 1-->
+		<img class ="oculta" id="profesorMS1UP" src="{{=URL('static','Sprites/ProfesorMalo/Style1/arriba.png')}}"/>
+		<img class ="oculta" id="profesorMS1LEFT" src="{{=URL('static','Sprites/ProfesorMalo/Style1/izquierda.png')}}"/>
+		<img class ="oculta" id="profesorMS1RIGHT" src="{{=URL('static','Sprites/ProfesorMalo/Style1/derecha.png')}}"/>
+		<!--Style 2-->
+		<img class ="oculta" id="profesorMS2UP" src="{{=URL('static','Sprites/ProfesorMalo/Style2/arriba.png')}}"/>
+		<img class ="oculta" id="profesorMS2LEFT" src="{{=URL('static','Sprites/ProfesorMalo/Style2/izquierda.png')}}"/>
+		<img class ="oculta" id="profesorMS2RIGHT" src="{{=URL('static','Sprites/ProfesorMalo/Style2/derecha.png')}}"/>
+	</body>
+</html>

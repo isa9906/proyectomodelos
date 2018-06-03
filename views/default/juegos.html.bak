@@ -9,21 +9,26 @@
 		</a>
 </header>
 <body>
-    <!--
 
+
+<!--
 <ol>
         {{for i in jugadores:}}
         <li>  <b>{{=i[0]}}</li>
     {{pass}}
-    </ol>
--->
+    </ol>-->
     {{
+    
     nombre = request.vars.nombre
-    db.executesql("insert into Jugador (nombreJugador) values ('Andres')")
+    bandera = False
+    #verifica si el nombre de usuario ya existe, si no existe crea un nuevo registro en la tabla
+    if(db.executesql("select * from Jugador where nombreJugador='"+nombre+"'")): bandera = True
+    if(bandera==False):
+        db.executesql("insert into Jugador (nombreJugador) values ('"+nombre+"')")
     }}
     {{pass}}
     <h1 style="color:white">
-        Bienvenido '{{=request.vars.nombre}}'
+        Bienvenido '{{=nombre}}'
     </h1>
     <script>
         function redireccionar(opcion){

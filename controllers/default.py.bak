@@ -6,11 +6,13 @@
 
 # ---- example index page ----
 def second():
+    #plantilla para cada juego
     db.executesql("update Juego set popularidad=popularidad+1 where idJuego=1")
     return dict()
 def juegos():
     juegos = db.executesql("select nombreJuego,link from Juego order by popularidad desc")
-    return dict(juegos=juegos)
+    jugadores = db.executesql("select nombreJugador from Jugador")
+    return dict(juegos=juegos,jugadores=jugadores)
 def index():
     return dict()
 

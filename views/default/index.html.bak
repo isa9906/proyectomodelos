@@ -13,7 +13,7 @@
     <form action="juegos.html" method="post">
             <h5 style="color:white;text-align:center">INICIAR SESION COMO JUGADOR</h5>
             <div style="width:200pt;text-align:center;margin-left:auto;margin-right:auto;display:block;color:white">
-                     Nombre del jugador<input id="nombre" name="nombre"/>
+                     Nombre del jugador<input name="nombre"/>
                     <input type="submit"/>
             </div>
     </form>

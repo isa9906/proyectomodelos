@@ -81,7 +81,7 @@ function estudiante(){
 		}
 		else if(accion=="up"){
 			if(this.up>=0){
-				this.up = (this.up+1)%7;
+				this.up = (this.up+1)%6;
 			}
 			else{
 				this.up = 0;

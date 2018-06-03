@@ -6,10 +6,13 @@
 
 # ---- example index page ----
 def second():
-    return dict(mensaje='Hola mundo')
+    db.executesql("update Juego set popularidad=popularidad+1 where idJuego=1")
+    return dict()
+def juegos():
+    juegos = db.executesql("select nombreJuego,link from Juego order by popularidad desc")
+    return dict(juegos=juegos)
 def index():
-    response.flash = T("Hello World")
-    return dict(message=T('Welcome to web2py!'))
+    return dict()
 
 # ---- API (example) -----
 @auth.requires_login()

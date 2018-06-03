@@ -1,0 +1,50 @@
+<head>
+		<LINK REL=StyleSheet HREF="{{=URL('static','css/misStyles.css')}}" TYPE="text/css" MEDIA=screen> 
+		<meta charset="utf-8">
+		<title>A 'ND I GAMES</title>
+</head>
+<header>
+		<a class="title">
+		 A 'nd I GAMES 
+		</a>
+</header>
+<body>
+    <!--
+
+<ol>
+        {{for i in jugadores:}}
+        <li>  <b>{{=i[0]}}</li>
+    {{pass}}
+    </ol>
+-->
+    {{
+    nombre = request.vars.nombre
+    db.executesql("insert into Jugador (nombreJugador) values ('Andres')")
+    }}
+    {{pass}}
+    <h1 style="color:white">
+        Bienvenido '{{=request.vars.nombre}}'
+    </h1>
+    <script>
+        function redireccionar(opcion){
+            if(opcion==1){
+                window.open("second.html", "PROFES UD", "width=1800, height=1000")
+            }
+        }
+    </script>
+    <h4 style="color:white;text-align:center">
+        JUEGOS DISPONIBLES
+    </h4>
+    <div>
+        <input type='image' src="{{=URL('static','image.png')}}" onclick="redireccionar(1)">
+    <div>
+    <ol id="tablaJuegos">
+        <h3>
+            JUEGOS MAS POPULARES
+        </h3>
+        {{for i in juegos:}}
+        <li>  <b>{{=i[0]}}:  </b><a href="{{=i[1]}}">LINK</a></li>
+        {{pass}}
+    </ol>
+
+</body>

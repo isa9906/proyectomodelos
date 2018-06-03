@@ -53,3 +53,182 @@ CREATE TABLE "auth_cas"(
     "renew" CHAR(1)
 );
 success!
+timestamp: 2018-06-03T10:06:39.482243
+CREATE TABLE "Jugador"(
+    "idJugador" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "nombreJugador" CHAR(512),
+    "contrasena" CHAR(512)
+);
+success!
+timestamp: 2018-06-03T10:06:39.687424
+CREATE TABLE "Juego"(
+    "idJuego" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "nombreJuego" CHAR(512),
+    "link" CHAR(512),
+    "popularidad" INTEGER
+);
+success!
+timestamp: 2018-06-03T10:06:39.838209
+CREATE TABLE "RegistrosJuegos"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "idJuego" INTEGER REFERENCES "Juego" ("idJuego") ON DELETE CASCADE  ,
+    "idJugador" INTEGER REFERENCES "Jugador" ("idJugador") ON DELETE CASCADE  ,
+    "vecesJugadas" INTEGER
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!

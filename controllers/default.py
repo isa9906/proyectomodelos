@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 # -------------------------------------------------------------------------
 # This is a sample controller
@@ -9,7 +10,7 @@ def second():
     db.executesql("update Juego set popularidad=popularidad+1 where idJuego=1")
     return dict()
 def juegos():
-    juegos = db.executesql("select nombreJuego,link,imagen from Juego order by popularidad desc")
+    juegos = db.executesql("select nombreJuego,link from Juego order by popularidad desc")
     jugadores = db.executesql("select nombreJugador from Jugador")
     return dict(juegos=juegos,jugadores=jugadores)
 def index():
@@ -62,3 +63,4 @@ def download():
     http://..../[app]/default/download/[filename]
     """
     return response.download(request, db)
+

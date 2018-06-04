@@ -49,7 +49,7 @@
         {{cont=cont+1}}
         </b><a href="{{=i[1]}}">
         {{imagen=i[2]}}
-        <img src="{{=URL('static','imagenes')}}/{{=imagen}}" title="{{=i[0]}}">
+        <img class="direccion" src="{{=URL('static','imagenes')}}/{{=imagen}}" title="{{=i[0]}}">
         </a>
         {{if (cont%3==0):}}
         <br>

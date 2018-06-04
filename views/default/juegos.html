@@ -45,9 +45,12 @@
         </h3>
         {{cont=0}}
         {{for i in juegos:}}
+        <h1>{{imagen=i[2]}}</h1>
         {{cont=cont+1}}
         </b><a href="{{=i[1]}}">
-            <img src="{{=i[2]}}" title="{{=i[0]}}"/></a>
+        {{imagen=i[2]}}
+        <img class="direccion" src="{{=URL('static','imagenes')}}/{{=imagen}}" title="{{=i[0]}}">
+        </a>
         {{if (cont%3==0):}}
         <br>
         {{else:}}

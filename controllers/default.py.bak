@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 # -------------------------------------------------------------------------
 # This is a sample controller
@@ -5,8 +6,6 @@
 # -------------------------------------------------------------------------
 
 # ---- example index page ----
-def pacman():
-    return dict()
 def second():
     db.executesql("update Juego set popularidad=popularidad+1 where idJuego=1")
     return dict()

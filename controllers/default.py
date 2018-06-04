@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 # -------------------------------------------------------------------------
 # This is a sample controller
@@ -62,3 +63,4 @@ def download():
     http://..../[app]/default/download/[filename]
     """
     return response.download(request, db)
+

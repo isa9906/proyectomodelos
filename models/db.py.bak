@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 
 # -------------------------------------------------------------------------
@@ -154,8 +155,7 @@ if configuration.get('scheduler.enabled'):
 # auth.enable_record_versioning(db)
 db.define_table('Jugador',
                 Field('idJugador','id'),
-                Field('nombreJugador','string'),
-                Field('contrasena','password')
+                Field('nombreJugador','string')
                 )
 db.define_table('Juego',
                 Field('idJuego','id'),

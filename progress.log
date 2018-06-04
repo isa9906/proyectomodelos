@@ -89,6 +89,7 @@
 [2018-06-02 19:43:22] EDIT ProyectoModelos/views/default/second.html: -2
 [2018-06-02 21:41:43] EDIT ProyectoModelos/static/js/scriptjg.js: 0
 [2018-06-02 21:47:30] EDIT ProyectoModelos/static/js/scriptjg.js: 0
+[2018-06-02 22:51:02] DELETE ProyectoModelos/static/Sprites/Estudiante/Arriba/Thumbs.db: -1
 [2018-06-03 09:59:47] EDIT proyectomodelos/views/default/index.html: 0
 [2018-06-03 09:59:56] EDIT proyectomodelos/views/default/index.html: 0
 [2018-06-03 10:00:06] EDIT proyectomodelos/views/default/index.html: 0
@@ -243,3 +244,4 @@
 [2018-06-03 19:44:00] EDIT proyectomodelos/views/default/juegos.html: 0
 [2018-06-03 19:54:55] EDIT proyectomodelos/views/juegos/pacman.html: 0
 [2018-06-03 19:54:59] EDIT proyectomodelos/views/juegos/pacman.html: 0
+

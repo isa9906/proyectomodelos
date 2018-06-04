@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 # -------------------------------------------------------------------------
 # This is a sample controller
@@ -6,16 +5,26 @@
 # -------------------------------------------------------------------------
 
 # ---- example index page ----
+def memorama():
+    return dict()
 def second():
     db.executesql("update Juego set popularidad=popularidad+1 where idJuego=1")
     return dict()
 def juegos():
-    juegos = db.executesql("select nombreJuego,link from Juego order by popularidad desc")
+    juegosdisp=db.executesql("select nombreJuego,link,imagen from Juego")
+    juegos = db.executesql("select nombreJuego,link,imagen from Juego order by popularidad desc")
     jugadores = db.executesql("select nombreJugador from Jugador")
-    return dict(juegos=juegos,jugadores=jugadores)
+    return dict(juegos=juegos,jugadores=jugadores,juegosdisp=juegosdisp)
 def index():
     return dict()
-
+def pacman():
+    return dict()
+def snake():
+    return dict()
+def pokemon():
+    return dict()
+def asteroids():
+    return dict()
 # ---- API (example) -----
 @auth.requires_login()
 def api_get_user_email():
@@ -63,4 +72,3 @@ def download():
     http://..../[app]/default/download/[filename]
     """
     return response.download(request, db)
-

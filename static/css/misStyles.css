@@ -1,9 +1,4 @@
-
-input[type="image"]{
-    border: 1px black solid;
-    border-radius: 10%;
-}
-img.direccion{
+input[type="image"] {
     border: 1px black solid;
     border-radius: 10%;
 }
@@ -28,4 +23,3 @@ color:white;
     margin-left: 80%;
     margin-top: 0%;
 }
-

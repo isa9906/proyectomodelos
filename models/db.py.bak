@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 
 # -------------------------------------------------------------------------
@@ -161,6 +160,7 @@ db.define_table('Juego',
                 Field('idJuego','id'),
                 Field('nombreJuego','string'),
                 Field('link','string'),
+                Field('imagen','string'),#direcion de la imagen
                 Field('popularidad','integer')#veces jugadas
                 )
 db.define_table('RegistrosJuegos',

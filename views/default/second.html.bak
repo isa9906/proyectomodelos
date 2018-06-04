@@ -4,20 +4,19 @@
 		<LINK REL=StyleSheet HREF="{{=URL('static','css/style.css')}}" TYPE="text/css" MEDIA=screen> 
 		<meta charset="utf-8">
 		<title>JUEGO PROFESORES</title>
-            {{from gluon.debug import dbg
-dbg.set_trace() # stop here!}}
+
 		<script src="{{=URL('static','js/jquery_1.11.0.js')}}" language="JavaScript1.2"></script>
 		<script src="{{=URL('static','js/estudiante.js')}}" language="JavaScript1.2"></script>
 		<script src="{{=URL('static','js/profesor.js')}}" language="JavaScript1.2"></script>
-		<script src="{{=URL('static','js/script.js')}}" language="JavaScript1.2"></script>
+		<script src="{{=URL('static','js/scriptjg.js')}}" language="JavaScript1.2"></script>
 	</head>
 	<header>
 		<a class="title">
 		JUEGO DOCENTES UNIVERSIDAD DISTRITAL
 		</a>
 	</header>
-	<body >
-
+	<body>
+        
 		<section>
 			<canvas id="myCanvas" width="800" height = "600">
 			</canvas>
@@ -60,6 +59,7 @@ dbg.set_trace() # stop here!}}
 		<img class ="oculta" id="estudianteUP2" src="{{=URL('static','Sprites/Estudiante/Arriba/2.png')}}"/>
 		<img class ="oculta" id="estudianteUP3" src="{{=URL('static','Sprites/Estudiante/Arriba/3.png')}}"/>
 		<img class ="oculta" id="estudianteUP4" src="{{=URL('static','Sprites/Estudiante/Arriba/4.png')}}"/>
+		<img class ="oculta" id="estudianteUP5" src="{{=URL('static','Sprites/Estudiante/Arriba/5.png')}}"/>
 		<img class ="oculta" id="estudianteUP6" src="{{=URL('static','Sprites/Estudiante/Arriba/6.png')}}"/>
 		<img class ="oculta" id="estudianteUP7" src="{{=URL('static','Sprites/Estudiante/Arriba/7.png')}}"/>
 		<!--ABAJO-->

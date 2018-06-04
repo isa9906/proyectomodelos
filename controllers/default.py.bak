@@ -5,23 +5,44 @@
 # -------------------------------------------------------------------------
 
 # ---- example index page ----
+def check():
+    idJuego = request.args(0)
+    idJugador = request.args(1)
+    bandera = False
+    if(db.executesql("select * from RegistrosJuegos where idJuego="+idJuego+" and idJugador="+idJugador+"")): bandera = True
+    if(bandera==False):
+        db.executesql("insert into RegistrosJuegos (idJuego,idJugador,vecesJugadas) values ("+idJuego+","+idJugador+",1)")
+    else:
+        db.executesql("update RegistroJuegos set vecesJugadas=vecesJugadas+1 where idJuego="+idJuego+" and idJugador="+idJugador+"")
+    return 
 def memorama():
+    db.executesql("update Juego set popularidad=popularidad+1 where nombreJuego='Memorama'")
     return dict()
 def second():
-    db.executesql("update Juego set popularidad=popularidad+1 where idJuego=1")
-    return dict()
+    nombre = request.function
+    db.executesql("update Juego set popularidad=popularidad+1 where nombreJuego='PROFESUD'")
+    return dict(nombre=nombre)
 def juegos():
-    juegosdisp=db.executesql("select nombreJuego,link,imagen from Juego")
-    juegos = db.executesql("select nombreJuego,link,imagen from Juego order by popularidad desc")
+    juegosdisp=db.executesql("select nombreJuego,link,imagen,idJuego from Juego")
+    juegos = db.executesql("select nombreJuego,link,imagen,idJuego from Juego order by popularidad desc")
     jugadores = db.executesql("select nombreJugador from Jugador")
     return dict(juegos=juegos,jugadores=jugadores,juegosdisp=juegosdisp)
 def index():
     return dict()
 def pacman():
+    db.executesql("update Juego set popularidad=popularidad+1 where nombreJuego='PACMAN'")
+    return dict()
+def elude():
+    db.executesql("update Juego set popularidad=popularidad+1 where nombreJuego='Elude Asteroids'")
     return dict()
 def snake():
+    db.executesql("update Juego set popularidad=popularidad+1 where nombreJuego='Snake'")
     return dict()
 def pokemon():
+    db.executesql("update Juego set popularidad=popularidad+1 where nombreJuego='Pokemon'")
+    return dict()
+def asteroids():
+    db.executesql("update Juego set popularidad=popularidad+1 where nombreJuego='Asteroids'")
     return dict()
 # ---- API (example) -----
 @auth.requires_login()

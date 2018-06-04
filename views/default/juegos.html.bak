@@ -18,7 +18,6 @@
     {{pass}}
     </ol>-->
     {{
-    
     nombre = request.vars.nombre
     bandera = False
     #verifica si el nombre de usuario ya existe, si no existe crea un nuevo registro en la tabla
@@ -28,54 +27,62 @@
     }}
     {{pass}}
     <h1 style="color:white">
-        Bienvenido '{{=nombre}}'
+        
+        Bienvenido/a '{{=nombre}}'
     </h1>
-    <script>
-        function redireccionar(opcion){
-            if(opcion==1){
-                window.open("second.html", "PROFES UD", "width=1800, height=1000")
-            }
-            if(opcion==2){
-                window.open("pacman.html", "PACMAN", "width=1800, height=1000")
-            }
-        }
-    </script>
     <h4 style="color:white;text-align:center">
         JUEGOS DISPONIBLES
     </h4>
     <div>
         {{contot=0}}
+        {{codigo=db.executesql("select Idjugador from Jugador where nombreJugador='"+nombre+"'")[0][0]}}
         {{for i in juegosdisp:}}
         {{imagen=i[2]}}
         {{contot=contot+1}}
-        </b><a href="{{=i[1]}}">
+        </b>
         {{imagen=i[2]}}
-        <img class="direccion" src="{{=URL('static','imagenes')}}/{{=imagen}}" title="{{=i[0]}}">
-        </a>
-        {{if (contot%3==0):}}
+        <a href="{{=i[1]}}" target="_blank"><input type='image' class="direccion" src="{{=URL('static','imagenes')}}/{{=imagen}}" title="{{=i[0]}}"
+                                                   onclick='window.open("{{=URL('check',args=[i[3],codigo])}}","Check","width=1800,height=1000");'></a>
+        {{if (contot%5==0):}}
         <br>
         {{else:}}
         {{pass}}
         {{pass}}
-    <div>
-    <div id="tablaJuegos">
+    <ol id="tablaJuegos">
         <h3>
             JUEGOS MAS POPULARES
         </h3>
         {{cont=0}}
+        {{juegos = juegos[:3]}}
         {{for i in juegos:}}
         {{imagen=i[2]}}
         {{cont=cont+1}}
-        </b><a href="{{=i[1]}}">
+        </b>
         {{imagen=i[2]}}
-        <img class="direccion" src="{{=URL('static','imagenes')}}/{{=imagen}}" title="{{=i[0]}}">
-        </a>
-        {{if (cont%3==0):}}
-        <br>
-        {{else:}}
+        <li> 
+            <a href="{{=i[1]}}" target="_blank"><input type='image' class="direccion" src="{{=URL('static','imagenes')}}/{{=imagen}}" title="{{=i[0]}}"
+                                                       onclick='window.open("{{=URL('check',args=[i[3],codigo])}}","Check","width=1800,height=1000");'></a></li>
+      
         {{pass}}
+        </ol>
+    <ol id="tablaJuegos">
+        <h3>
+            TUS JUEGOS FAVORITOS
+        </h3>
+        {{codigo=db.executesql("select Idjugador from Jugador where nombreJugador='"+nombre+"'")[0][0]}}
+        {{registroJuegos = db.executesql("select Juego.nombreJuego,Juego.link,Juego.imagen,Juego.idJuego from RegistrosJuegos where RegistrosJuegos.idJuego = Juego.idJuego and idJugador="+str(codigo)+"")}}
+        {{cont=0}}
+        {{registroJuegos = registroJuegos[:3]}}
+        {{for i in registroJuegos:}}
+        {{cont=cont+1}}
+        </b>
+        {{imagen=i[2]}}
+        <li> 
+            <a href="{{=i[1]}}" target="_blank"><input type='image' class="direccion" src="{{=URL('static','imagenes')}}/{{=imagen}}" title="{{=i[0]}}"
+                                                       onclick='window.open("{{=URL('check',args=[i[3],codigo])}}","Check","width=1800,height=1000");'></a></li>
+      
         {{pass}}
-    </div>
-
+        </ol>
+        <input name="nombreJugador" value="{{=request.vars.nombre}}">
 
 </body>

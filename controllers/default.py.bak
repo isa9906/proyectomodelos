@@ -5,8 +5,9 @@
 # -------------------------------------------------------------------------
 
 # ---- example index page ----
+def pacman():
+    return dict()
 def second():
-    #plantilla para cada juego
     db.executesql("update Juego set popularidad=popularidad+1 where idJuego=1")
     return dict()
 def juegos():

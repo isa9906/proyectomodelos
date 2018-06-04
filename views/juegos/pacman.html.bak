@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>
+            PACMAN - 15237
+        </title>
+    </head>
+    
+    <body>
+        <canvas id="myCanvas" width="510" height="510">
+        </canvas>
+        <script type="text/javascript" src="{{=URL('static','js/pacman/Pacman.js')}}"></script>
+        <script type="text/javascript" src="{{=URL('static','js/pacman/Ghost.js')}}"></script>
+        <script type="text/javascript" src="{{=URL('static','js/pacman/Grid.js')}}"></script>
+        <script type="text/javascript" src="{{=URL('static','js/pacman/Game.js')}}""></script>
+    </body>
+
+</html>

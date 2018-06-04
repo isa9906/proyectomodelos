@@ -48,7 +48,8 @@
             JUEGOS MAS POPULARES
         </h3>
         {{for i in juegos:}}
-        <li>  <b>{{=i[0]}}:  </b><a href="{{=i[1]}}">LINK</a></li>
+        <!--<li>  <b>{{=i[0]}}:  </b><a href="{{=i[1]}}">LINK</a></li>-->
+        <li>  <b>{{=i[0]}}:  </b><a href="../juegos/pacman">LINK</a></li>
         {{pass}}
     </ol>
 

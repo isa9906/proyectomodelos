@@ -1,4 +1,3 @@
-
 <head>
 		<LINK REL=StyleSheet HREF="{{=URL('static','css/misStyles.css')}}" TYPE="text/css" MEDIA=screen> 
 		<meta charset="utf-8">
@@ -10,27 +9,34 @@
 		</a>
 </header>
 <body>
-    <!--
 
+
+<!--
 <ol>
         {{for i in jugadores:}}
         <li>  <b>{{=i[0]}}</li>
     {{pass}}
-    </ol>
--->
+    </ol>-->
     {{
+    
     nombre = request.vars.nombre
-    if(not(nombre in jugadores)):
+    bandera = False
+    #verifica si el nombre de usuario ya existe, si no existe crea un nuevo registro en la tabla
+    if(db.executesql("select * from Jugador where nombreJugador='"+nombre+"'")): bandera = True
+    if(bandera==False):
         db.executesql("insert into Jugador (nombreJugador) values ('"+nombre+"')")
     }}
     {{pass}}
     <h1 style="color:white">
-        Bienvenido '{{=request.vars.nombre}}'
+        Bienvenido '{{=nombre}}'
     </h1>
     <script>
         function redireccionar(opcion){
             if(opcion==1){
                 window.open("second.html", "PROFES UD", "width=1800, height=1000")
+            }
+            if(opcion==2){
+                window.open("pacman.html", "PACMAN", "width=1800, height=1000")
             }
         }
     </script>
@@ -38,7 +44,19 @@
         JUEGOS DISPONIBLES
     </h4>
     <div>
-        <input type='image' src="{{=URL('static','image.png')}}" onclick="redireccionar(1)">
+        {{contot=0}}
+        {{for i in juegosdisp:}}
+        {{imagen=i[2]}}
+        {{contot=contot+1}}
+        </b><a href="{{=i[1]}}">
+        {{imagen=i[2]}}
+        <img class="direccion" src="{{=URL('static','imagenes')}}/{{=imagen}}" title="{{=i[0]}}">
+        </a>
+        {{if (contot%5==0):}}
+        <br>
+        {{else:}}
+        {{pass}}
+        {{pass}}
     <div>
     <div id="tablaJuegos">
         <h3>
@@ -46,7 +64,7 @@
         </h3>
         {{cont=0}}
         {{for i in juegos:}}
-        <h1>{{imagen=i[2]}}</h1>
+        {{imagen=i[2]}}
         {{cont=cont+1}}
         </b><a href="{{=i[1]}}">
         {{imagen=i[2]}}
@@ -58,5 +76,6 @@
         {{pass}}
         {{pass}}
     </div>
+
 
 </body>

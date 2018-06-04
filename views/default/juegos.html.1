@@ -35,28 +35,13 @@
             if(opcion==1){
                 window.open("second.html", "PROFES UD", "width=1800, height=1000")
             }
-            if(opcion==2){
-                window.open("pacman.html", "PACMAN", "width=1800, height=1000")
-            }
         }
     </script>
     <h4 style="color:white;text-align:center">
         JUEGOS DISPONIBLES
     </h4>
     <div>
-        {{contot=0}}
-        {{for i in juegosdisp:}}
-        {{imagen=i[2]}}
-        {{contot=contot+1}}
-        </b><a href="{{=i[1]}}">
-        {{imagen=i[2]}}
-        <img class="direccion" src="{{=URL('static','imagenes')}}/{{=imagen}}" title="{{=i[0]}}">
-        </a>
-        {{if (contot%3==0):}}
-        <br>
-        {{else:}}
-        {{pass}}
-        {{pass}}
+        <input type='image' src="{{=URL('static','image.png')}}" onclick="redireccionar(1)">
     <div>
     <div id="tablaJuegos">
         <h3>
@@ -70,7 +55,7 @@
         {{imagen=i[2]}}
         <img class="direccion" src="{{=URL('static','imagenes')}}/{{=imagen}}" title="{{=i[0]}}">
         </a>
-        {{if (cont%3==0):}}
+        {{if (cont%5==0):}}
         <br>
         {{else:}}
         {{pass}}
